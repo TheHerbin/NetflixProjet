@@ -7,17 +7,26 @@ pipeline {
     
     stages {
      
-    stage('Build') { 
+        stage('Build') { 
             steps {
                 bat 'mvn -B -DskipTests clean package'
-                }
             }
-        
-    stage('Run') { 
+        }
+
+        stage('Run') { 
             steps {
                 bat returnStdout: true, script: 'java -jar  target/netflix-1.0.0.jar  netflix_titles.csv'
-            
-                }
+
+            }
+        }
+        stage('LoadWebPageIntoServer') { 
+            steps {
+                bat '''
+                    rmdir D:\\xampp\\htdocs\\out
+                    move C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\NetflixProjet\\out D:\\xampp\\htdocs
+                '''
+
             }
         }
     }
+}
