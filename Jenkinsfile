@@ -24,7 +24,7 @@ pipeline {
                 bat '''
                     rmdir D:\\xampp\\htdocs\\netflixprojet\\movies
                     del D:\\xampp\\htdocs\\netflixprojet\\netflix.html
-                    move C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\NetflixProjet\\out\\movies D:\\xampp\\htdocs\\netflixprojet\\
+                    move -d C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\NetflixProjet\\out\\movies D:\\xampp\\htdocs\\netflixprojet\\
                     move C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\NetflixProjet\\out\\netflix.html D:\\xampp\\htdocs\\netflixprojet\\
                 '''
 
