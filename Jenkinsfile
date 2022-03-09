@@ -22,8 +22,10 @@ pipeline {
         stage('LoadWebPageIntoServer') { 
             steps {
                 bat '''
-                    rmdir D:\\xampp\\htdocs\\netflixprojet\\*.*
-                    move C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\NetflixProjet\\out\\* D:\\xampp\\htdocs\\netflixprojet
+                    rmdir D:\\xampp\\htdocs\\netflixprojet\\movies
+                    del D:\\xampp\\htdocs\\netflixprojet\\*.html
+                    move C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\NetflixProjet\\out\\movies D:\\xampp\\htdocs\\netflixprojet
+                    move C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\NetflixProjet\\out\\netflix.html D:\\xampp\\htdocs\\netflixprojet
                 '''
 
             }
