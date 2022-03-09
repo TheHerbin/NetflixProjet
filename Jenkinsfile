@@ -1,1 +1,19 @@
-sh returnStdout: true, script: 'java -jar  netflix-1.0.0.jar  ../netflix_titles.csv'
+pipeline {
+    agent any
+    tools{
+        jdk 'jdk8'
+        maven 'maven'
+         }
+    
+    stages {
+        stage ('Initialize') {
+            steps {
+                bat '''
+                    echo "PATH = ${PATH}"
+                    echo "M2_HOME = ${M2_HOME}"
+                ''' 
+                }
+            
+            }
+        }
+    }
