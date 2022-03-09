@@ -27,7 +27,8 @@ pipeline {
                     move C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\NetflixProjet\\out\\netflix.html D:\\xampp\\htdocs\\netflixprojet\\
                 '''
                 bat '''
-                    copy C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\NetflixProjet\\out\\movies D:\\xampp\\htdocs\\netflixprojet
+                    mkdir D:\\xampp\\htdocs\\netflixprojet\\movies
+                    copy C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\NetflixProjet\\out\\movies D:\\xampp\\htdocs\\netflixprojet\\movies
                 '''
 
             }
